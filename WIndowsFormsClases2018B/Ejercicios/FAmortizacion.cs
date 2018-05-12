@@ -29,8 +29,10 @@ namespace WIndowsFormsClases2018B.Ejercicios
 
             MessageBox.Show(tasa_mensual.ToString("0.0000"));
             for (int i=1; i<=plazo; i++) {
+
                 grid_amortizacion.Rows.Add(plazo);
-                grid_amortizacion.Rows[i].Cells["Nombre"].Value = i;
+                grid_amortizacion.Rows[i].Cells["Numero"].Value = i;
+
             }
 
         }

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace WIndowsFormsClases2018B
 {
     public partial class MenuPrincipal : System.Windows.Forms.Form
@@ -94,6 +96,14 @@ namespace WIndowsFormsClases2018B
             {
                 childForm.Close();
             }
+        }
+
+        private void amortizaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ejercicios.FAmortizacion fAmortizacion = new Ejercicios.FAmortizacion();
+
+            fAmortizacion.Show();
+
         }
     }
 }

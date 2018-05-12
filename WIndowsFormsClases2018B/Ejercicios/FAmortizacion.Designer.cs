@@ -38,13 +38,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grid_amortizacion = new System.Windows.Forms.DataGridView();
             this.Cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Interes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_amortizacion)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,6 +87,8 @@
             // cb_tipoPrestamo
             // 
             this.cb_tipoPrestamo.FormattingEnabled = true;
+            this.cb_tipoPrestamo.Items.AddRange(new object[] {
+            "Francesa, Alemana"});
             this.cb_tipoPrestamo.Location = new System.Drawing.Point(316, 18);
             this.cb_tipoPrestamo.Name = "cb_tipoPrestamo";
             this.cb_tipoPrestamo.Size = new System.Drawing.Size(169, 21);
@@ -95,6 +97,8 @@
             // cb_plazo
             // 
             this.cb_plazo.FormattingEnabled = true;
+            this.cb_plazo.Items.AddRange(new object[] {
+            "5,10,15,20"});
             this.cb_plazo.Location = new System.Drawing.Point(316, 45);
             this.cb_plazo.Name = "cb_plazo";
             this.cb_plazo.Size = new System.Drawing.Size(169, 21);
@@ -108,15 +112,16 @@
             this.btn_calcular.TabIndex = 5;
             this.btn_calcular.Text = "Calcular";
             this.btn_calcular.UseVisualStyleBackColor = true;
+            this.btn_calcular.Click += new System.EventHandler(this.btn_calcular_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(14, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.Size = new System.Drawing.Size(84, 13);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Modelo Prestamo";
+            this.label1.Text = "Monto Prestamo";
             // 
             // label2
             // 
@@ -136,18 +141,18 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Interés";
             // 
-            // dataGridView1
+            // grid_amortizacion
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grid_amortizacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_amortizacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Cuenta,
             this.Interes,
             this.Total,
             this.Numero});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 167);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(516, 260);
-            this.dataGridView1.TabIndex = 1;
+            this.grid_amortizacion.Location = new System.Drawing.Point(12, 154);
+            this.grid_amortizacion.Name = "grid_amortizacion";
+            this.grid_amortizacion.Size = new System.Drawing.Size(516, 273);
+            this.grid_amortizacion.TabIndex = 1;
             // 
             // Cuenta
             // 
@@ -174,13 +179,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(540, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grid_amortizacion);
             this.Controls.Add(this.panel1);
             this.Name = "FAmortizacion";
             this.Text = "FAmortizacion";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_amortizacion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -197,7 +202,7 @@
         private System.Windows.Forms.TextBox txt_plazo;
         private System.Windows.Forms.TextBox txt_interes;
         private System.Windows.Forms.TextBox txt_modPrestamo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grid_amortizacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Interes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;

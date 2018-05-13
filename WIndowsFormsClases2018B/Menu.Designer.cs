@@ -64,6 +64,8 @@
             this.tileHorizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arrangeIconsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ejerciciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.amortizaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,8 +84,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.ejerciciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.amortizaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -289,7 +289,7 @@
             this.toolBarToolStripMenuItem,
             this.statusBarToolStripMenuItem});
             this.viewMenu.Name = "viewMenu";
-            this.viewMenu.Size = new System.Drawing.Size(35, 20);
+            this.viewMenu.Size = new System.Drawing.Size(36, 20);
             this.viewMenu.Text = "&Ver";
             // 
             // toolBarToolStripMenuItem
@@ -336,7 +336,7 @@
             this.closeAllToolStripMenuItem,
             this.arrangeIconsToolStripMenuItem});
             this.windowsMenu.Name = "windowsMenu";
-            this.windowsMenu.Size = new System.Drawing.Size(66, 20);
+            this.windowsMenu.Size = new System.Drawing.Size(67, 20);
             this.windowsMenu.Text = "&Ventanas";
             // 
             // newWindowToolStripMenuItem
@@ -380,6 +380,21 @@
             this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.arrangeIconsToolStripMenuItem.Text = "&Organizar iconos";
             this.arrangeIconsToolStripMenuItem.Click += new System.EventHandler(this.ArrangeIconsToolStripMenuItem_Click);
+            // 
+            // ejerciciosToolStripMenuItem
+            // 
+            this.ejerciciosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.amortizaciónToolStripMenuItem});
+            this.ejerciciosToolStripMenuItem.Name = "ejerciciosToolStripMenuItem";
+            this.ejerciciosToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.ejerciciosToolStripMenuItem.Text = "Ejercicios";
+            // 
+            // amortizaciónToolStripMenuItem
+            // 
+            this.amortizaciónToolStripMenuItem.Name = "amortizaciónToolStripMenuItem";
+            this.amortizaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.amortizaciónToolStripMenuItem.Text = "Amortización";
+            this.amortizaciónToolStripMenuItem.Click += new System.EventHandler(this.amortizaciónToolStripMenuItem_Click);
             // 
             // helpMenu
             // 
@@ -526,26 +541,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // ejerciciosToolStripMenuItem
-            // 
-            this.ejerciciosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.amortizaciónToolStripMenuItem});
-            this.ejerciciosToolStripMenuItem.Name = "ejerciciosToolStripMenuItem";
-            this.ejerciciosToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.ejerciciosToolStripMenuItem.Text = "Ejercicios";
-            // 
-            // amortizaciónToolStripMenuItem
-            // 
-            this.amortizaciónToolStripMenuItem.Name = "amortizaciónToolStripMenuItem";
-            this.amortizaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.amortizaciónToolStripMenuItem.Text = "Amortización";
-            this.amortizaciónToolStripMenuItem.Click += new System.EventHandler(this.amortizaciónToolStripMenuItem_Click);
-            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 453);
+            this.ControlBox = false;
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
@@ -553,6 +554,7 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MenuPrincipal";
             this.Text = "Menu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);

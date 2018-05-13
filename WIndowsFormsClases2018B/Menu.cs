@@ -101,7 +101,7 @@ namespace WIndowsFormsClases2018B
         private void amortizaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Ejercicios.FAmortizacion fAmortizacion = new Ejercicios.FAmortizacion();
-
+            fAmortizacion.MdiParent = this;
             fAmortizacion.Show();
 
         }

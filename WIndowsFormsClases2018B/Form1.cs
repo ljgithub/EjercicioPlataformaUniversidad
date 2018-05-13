@@ -22,17 +22,31 @@ namespace WIndowsFormsClases2018B
             string varusuario = "javier";
             string varpass = "1234";
 
+            Ejercicios.Validaciones.validacionesLogin val = new Ejercicios.Validaciones.validacionesLogin();
+            ErrorProvider err = new ErrorProvider();
 
-            if ((txt_usuario.Text==varusuario) & (txt_password.Text==varpass))
+            //if (!val.validacionIsLetras(Convert.ToInt32(txt_usuario.Text)))
+            /*if (!val.validacionIsNumeric(txt_password.Text))
             {
-                MessageBox.Show("Bienvenido Usuario: " + varusuario);
-                MenuPrincipal menu = new MenuPrincipal();
-                this.Hide();
-                menu.Show();
+                err.SetError(txt_password, "No se admiten letras");
+            }*/
+            if (!val.validacionIsLetras(txt_password.Text))
+            {
+                err.SetError(txt_usuario, "No se admiten números");
             }
             else
             {
-                MessageBox.Show("Usuario Incorrecto","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if ((txt_usuario.Text == varusuario) & (txt_password.Text == varpass))
+                {
+                    MessageBox.Show("Bienvenido Usuario: " + varusuario);
+                    MenuPrincipal menu = new MenuPrincipal();
+                    this.Hide();
+                    menu.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario Incorrecto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

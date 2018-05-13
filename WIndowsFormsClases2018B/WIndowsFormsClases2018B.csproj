@@ -52,6 +52,7 @@
       <DependentUpon>FAmortizacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Ejercicios\Validaciones\validacionesFAmortizacion.cs" />
+    <Compile Include="Ejercicios\Validaciones\validacionesLogin.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

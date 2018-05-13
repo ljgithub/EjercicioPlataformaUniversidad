@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_password = new System.Windows.Forms.TextBox();
             this.txt_usuario = new System.Windows.Forms.TextBox();
@@ -36,8 +37,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_salir = new System.Windows.Forms.Button();
             this.btn_aceptar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -113,6 +116,10 @@
             this.btn_aceptar.UseVisualStyleBackColor = true;
             this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frm_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -127,6 +134,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -141,6 +149,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.Button btn_aceptar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

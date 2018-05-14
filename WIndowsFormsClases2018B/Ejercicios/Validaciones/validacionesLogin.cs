@@ -22,19 +22,7 @@ namespace WIndowsFormsClases2018B.Ejercicios.Validaciones
             }
         }
 
-        public bool validacionIsLetras(String valor)
-        {
-            try
-            {
-                string x = Convert.ToString(valor);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
-        }
+       
 
 
     }

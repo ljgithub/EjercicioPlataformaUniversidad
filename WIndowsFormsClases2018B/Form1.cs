@@ -12,6 +12,9 @@ namespace WIndowsFormsClases2018B
 {
     public partial class frm_login : Form
     {
+        
+        
+
         public frm_login()
         {
             InitializeComponent();
@@ -19,10 +22,9 @@ namespace WIndowsFormsClases2018B
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
-            string varusuario = "javier";
+            string varusuario = "JAVIER";
             string varpass = "1234";
 
-            Ejercicios.Validaciones.validacionesLogin val = new Ejercicios.Validaciones.validacionesLogin();
             ErrorProvider err = new ErrorProvider();
 
             //if (!val.validacionIsLetras(Convert.ToInt32(txt_usuario.Text)))
@@ -30,9 +32,10 @@ namespace WIndowsFormsClases2018B
             {
                 err.SetError(txt_password, "No se admiten letras");
             }*/
-            if (!val.validacionIsLetras(txt_password.Text))
+            if (txt_usuario.Text =="" || txt_password.Text=="")
             {
-                err.SetError(txt_usuario, "No se admiten números");
+                err.SetError(txt_usuario, "No se admite user vacío");
+                err.SetError(txt_password, "No se admite pass vacío");
             }
             else
             {
@@ -67,6 +70,23 @@ namespace WIndowsFormsClases2018B
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
+            }
+        }
+
+        private void txt_usuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txt_usuario.CharacterCasing = CharacterCasing.Upper;            
+            if (!char.IsControl(e.KeyChar)&&!char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

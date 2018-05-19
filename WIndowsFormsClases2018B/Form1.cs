@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,8 +14,8 @@ namespace WIndowsFormsClases2018B
 {
     public partial class frm_login : Form
     {
-        
-        
+
+        SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["NorthwindString"].ConnectionString);
 
         public frm_login()
         {
@@ -22,35 +24,39 @@ namespace WIndowsFormsClases2018B
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
-            string varusuario = "JAVIER";
-            string varpass = "1234";
+            //string varusuario = "JAVIER";
+            //string varpass = "1234";
 
-            ErrorProvider err = new ErrorProvider();
+            //ErrorProvider err = new ErrorProvider();
 
-            //if (!val.validacionIsLetras(Convert.ToInt32(txt_usuario.Text)))
-            /*if (!val.validacionIsNumeric(txt_password.Text))
-            {
-                err.SetError(txt_password, "No se admiten letras");
-            }*/
-            if (txt_usuario.Text =="" || txt_password.Text=="")
-            {
-                err.SetError(txt_usuario, "No se admite user vacío");
-                err.SetError(txt_password, "No se admite pass vacío");
-            }
-            else
-            {
-                if ((txt_usuario.Text == varusuario) & (txt_password.Text == varpass))
-                {
-                    MessageBox.Show("Bienvenido Usuario: " + varusuario);
-                    MenuPrincipal menu = new MenuPrincipal();
-                    this.Hide();
-                    menu.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Usuario Incorrecto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            ////if (!val.validacionIsLetras(Convert.ToInt32(txt_usuario.Text)))
+            ///*if (!val.validacionIsNumeric(txt_password.Text))
+            //{
+            //    err.SetError(txt_password, "No se admiten letras");
+            //}*/
+            //if (txt_usuario.Text =="" || txt_password.Text=="")
+            //{
+            //    err.SetError(txt_usuario, "No se admite user vacío");
+            //    err.SetError(txt_password, "No se admite pass vacío");
+            //}
+            //else
+            //{
+            //    if ((txt_usuario.Text == varusuario) & (txt_password.Text == varpass))
+            //    {
+            //        MessageBox.Show("Bienvenido Usuario: " + varusuario);
+            //        MenuPrincipal menu = new MenuPrincipal();
+            //        this.Hide();
+            //        menu.Show();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Usuario Incorrecto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //}
+
+
+
+
         }
 
         private void btn_salir_Click(object sender, EventArgs e)
@@ -75,8 +81,8 @@ namespace WIndowsFormsClases2018B
 
         private void txt_usuario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txt_usuario.CharacterCasing = CharacterCasing.Upper;            
-            if (!char.IsControl(e.KeyChar)&&!char.IsLetter(e.KeyChar))
+            txt_usuario.CharacterCasing = CharacterCasing.Upper;
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
             {
                 e.Handled = true;
             }
